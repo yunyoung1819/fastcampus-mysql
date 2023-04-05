@@ -32,7 +32,13 @@ public class Member {
 		this.nickname = Objects.requireNonNull(nickname);
 		this.createdAt = createdAt == null ? LocalDateTime.now() : createdAt;
 	}
-	void validateNickname(String nickname) {
+
+	public void changeNickname(String to) {
+		validateNickname(to);
+		nickname = to;
+	}
+
+	private void validateNickname(String nickname) {
 		Assert.isTrue(nickname.length() <= NAME_MAX_LENGTH, "최대 길이를 초과했습니다.");
 	}
 }
