@@ -1,13 +1,13 @@
-create table Member
-(
-    id int auto_increment,
-    email varchar(20) not null,
-    nickname varchar(20) not null,
-    birthday date not null,
-    createdAt datetime not null,
-    constraint member_id_uindex
-        primary key (id)
-);
+--create table Member
+--(
+--    id int auto_increment,
+--    email varchar(20) not null,
+--    nickname varchar(20) not null,
+--    birthday date not null,
+--    createdAt datetime not null,
+--    constraint member_id_uindex
+--        primary key (id)
+--);
 
 create table MemberNicknameHistory
 (
@@ -50,5 +50,8 @@ create index POST__index_member_id
 create index POST__index_created_date
     on POST (createdDate);
 
+create index POST__index_member_id_created_date
+    on POST (memberId, createdDate);
 
+select * from Follow;
 

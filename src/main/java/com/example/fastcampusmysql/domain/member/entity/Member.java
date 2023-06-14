@@ -34,6 +34,7 @@ public class Member {
 	}
 
 	public void changeNickname(String to) {
+		Objects.requireNonNull(to);
 		validateNickname(to);
 		nickname = to;
 	}
